@@ -1,0 +1,4 @@
+html { font-size: 14px; }
+@media (min-width: 768px) { html { font-size: 16px; } }
+body { margin-bottom: 60px; }
+table { margin-top: 18px; }

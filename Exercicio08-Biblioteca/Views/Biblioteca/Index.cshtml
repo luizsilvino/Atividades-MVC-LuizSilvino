@@ -1,0 +1,10 @@
+@model IEnumerable<BibliotecaMVC.Models.Livro>
+<h1>Biblioteca</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Disponiveis">Disponíveis</a>
+<table class="table">
+<tr><th>Título</th><th>Autor</th><th>Ano</th><th>Situação</th></tr>
+@foreach (var livro in Model)
+{
+<tr><td>@livro.Titulo</td><td>@livro.Autor</td><td>@livro.Ano</td><td>@(livro.Disponivel ? "Disponível para empréstimo" : "Emprestado")</td></tr>
+}
+</table>

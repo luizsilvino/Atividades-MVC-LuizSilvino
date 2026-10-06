@@ -1,0 +1,17 @@
+@model IEnumerable<FuncionariosMVC.Models.Funcionario>
+<h1>Funcionários</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Ativos">Ativos</a> | <a asp-action="Inativos">Inativos</a> | <a asp-action="Dashboard">Dashboard</a>
+<hr />
+<strong>Departamentos:</strong>
+<a asp-action="Departamento" asp-route-id="TI">TI</a> |
+<a asp-action="Departamento" asp-route-id="RH">RH</a> |
+<a asp-action="Departamento" asp-route-id="Vendas">Vendas</a> |
+<a asp-action="Departamento" asp-route-id="Financeiro">Financeiro</a>
+
+<table class="table">
+<tr><th>Nome</th><th>Cargo</th><th>Departamento</th><th>Salário</th><th>Situação</th><th>Faixa</th></tr>
+@foreach (var f in Model)
+{
+<tr><td>@f.Nome</td><td>@f.Cargo</td><td>@f.Departamento</td><td>R$ @f.Salario.ToString("F2")</td><td>@f.Situacao</td><td>@f.FaixaSalarial</td></tr>
+}
+</table>

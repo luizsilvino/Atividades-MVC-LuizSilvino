@@ -1,0 +1,10 @@
+@model IEnumerable<EstoqueMVC.Models.Produto>
+<h1>Controle de Estoque</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Baixo">Estoque baixo</a> | <a asp-action="Esgotados">Esgotados</a> | <a asp-action="Alertas">Alertas</a>
+<table class="table">
+<tr><th>Produto</th><th>Categoria</th><th>Estoque</th><th>Mínimo</th><th>Preço</th><th>Situação</th></tr>
+@foreach (var produto in Model)
+{
+<tr><td>@produto.Nome</td><td>@produto.Categoria</td><td>@produto.Estoque</td><td>@produto.EstoqueMinimo</td><td>R$ @produto.Preco.ToString("F2")</td><td>@produto.Situacao</td></tr>
+}
+</table>

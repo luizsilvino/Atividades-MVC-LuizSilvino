@@ -1,0 +1,10 @@
+@model IEnumerable<ProdutosMVC.Models.Produto>
+<h1>Produtos</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Disponiveis">Somente disponíveis</a>
+<table class="table">
+<tr><th>Nome</th><th>Categoria</th><th>Estoque</th><th>Preço</th><th>Situação</th></tr>
+@foreach (var produto in Model)
+{
+<tr><td>@produto.Nome</td><td>@produto.Categoria</td><td>@produto.Estoque</td><td>R$ @produto.Preco.ToString("F2")</td><td>@(produto.Estoque == 0 ? "Produto esgotado" : "Disponível")</td></tr>
+}
+</table>

@@ -1,0 +1,10 @@
+@model IEnumerable<PedidosMVC.Models.Pedido>
+<h1>Pedidos</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="EmPreparo">Em preparo</a> | <a asp-action="Prontos">Prontos</a> | <a asp-action="Entregues">Entregues</a> | <a asp-action="Resumo">Resumo</a>
+<table class="table">
+<tr><th>Cliente</th><th>Produto</th><th>Quantidade</th><th>Preço unitário</th><th>Total</th><th>Status</th></tr>
+@foreach (var pedido in Model)
+{
+<tr><td>@pedido.Cliente</td><td>@pedido.Produto</td><td>@pedido.Quantidade</td><td>R$ @pedido.PrecoUnitario.ToString("F2")</td><td>R$ @pedido.Total.ToString("F2")</td><td>@pedido.Status</td></tr>
+}
+</table>

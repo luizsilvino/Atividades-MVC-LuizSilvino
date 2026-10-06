@@ -1,0 +1,16 @@
+<h1>Dashboard</h1>
+<h3>Funcionários</h3>
+<p>Total: @ViewBag.Total</p>
+<p>Ativos: @ViewBag.Ativos</p>
+<p>Inativos: @ViewBag.Inativos</p>
+
+<h3>Quantidade por departamento</h3>
+<p>TI: @ViewBag.TI</p>
+<p>RH: @ViewBag.RH</p>
+<p>Vendas: @ViewBag.Vendas</p>
+<p>Financeiro: @ViewBag.Financeiro</p>
+
+<h3>Salários</h3>
+<p>Média salarial: R$ @(((decimal)ViewBag.Media).ToString("F2"))</p>
+<p>Maior salário: R$ @(((decimal)ViewBag.Maior).ToString("F2"))</p>
+<p>Menor salário: R$ @(((decimal)ViewBag.Menor).ToString("F2"))</p>

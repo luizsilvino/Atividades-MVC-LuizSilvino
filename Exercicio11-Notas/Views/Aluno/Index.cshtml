@@ -1,0 +1,10 @@
+@model IEnumerable<NotasMVC.Models.Aluno>
+<h1>Sistema de Notas</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Aprovados">Aprovados</a> | <a asp-action="Recuperacao">Recuperação</a> | <a asp-action="Reprovados">Reprovados</a>
+<table class="table">
+<tr><th>Aluno</th><th>Curso</th><th>Média</th><th>Situação</th></tr>
+@foreach (var aluno in Model)
+{
+<tr><td>@aluno.Nome</td><td>@aluno.Curso</td><td>@aluno.Media.ToString("F1")</td><td>@aluno.Situacao</td></tr>
+}
+</table>

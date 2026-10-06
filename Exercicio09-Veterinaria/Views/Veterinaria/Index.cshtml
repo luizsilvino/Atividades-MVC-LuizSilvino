@@ -1,0 +1,10 @@
+@model IEnumerable<VeterinariaMVC.Models.Animal>
+<h1>Animais cadastrados</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Cachorros">Cachorros</a> | <a asp-action="Gatos">Gatos</a>
+<table class="table">
+<tr><th>ID</th><th>Nome</th><th>Espécie</th><th>Idade</th><th>Dono</th></tr>
+@foreach (var animal in Model)
+{
+<tr><td>@animal.Id</td><td>@animal.Nome</td><td>@animal.Especie</td><td>@animal.Idade</td><td>@animal.Dono</td></tr>
+}
+</table>

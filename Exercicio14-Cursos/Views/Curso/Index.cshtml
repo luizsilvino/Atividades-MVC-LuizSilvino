@@ -1,0 +1,10 @@
+@model IEnumerable<CursosMVC.Models.Curso>
+<h1>Cursos</h1>
+<a asp-action="Index">Todos</a> | <a asp-action="Disponiveis">Disponíveis</a> | <a asp-action="Online">Online</a> | <a asp-action="Presenciais">Presenciais</a> | <a asp-action="Resumo">Resumo</a>
+<table class="table">
+<tr><th>Curso</th><th>Carga Horária</th><th>Modalidade</th><th>Vagas</th><th>Valor</th><th>Situação</th></tr>
+@foreach (var curso in Model)
+{
+<tr><td>@curso.Nome</td><td>@curso.CargaHoraria h</td><td>@curso.Modalidade</td><td>@curso.Vagas</td><td>R$ @curso.Valor.ToString("F2")</td><td>@curso.Situacao</td></tr>
+}
+</table>
